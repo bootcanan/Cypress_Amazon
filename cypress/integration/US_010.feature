@@ -1,4 +1,4 @@
-Feature: User should be able to add new items to his basket
+Feature: US_010 User should be able to add new items to his basket
 
     Scenario: TC_001 User should be able to add new items to his basket
 
