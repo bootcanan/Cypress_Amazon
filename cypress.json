@@ -1,5 +1,6 @@
 {
-    "testFiles": "**/*.feature" ,
+    "uncaught": "exception",
+    "testFiles": "**/*.feature",
     "reporter": "cypress-multi-reporters",
     "reporterOptions": {
         "reporterEnabled": "mochawesome",
@@ -11,6 +12,4 @@
             "json": true
         }
     }
-   
-  }
-
+}

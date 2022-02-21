@@ -1,41 +1,41 @@
 import { Given, And, Then, When } from "cypress-cucumber-preprocessor/steps";
-import { generateRandomEmail, generateRandomName } from "../../support/util";
+import { Hook } from "mocha";
 /// <reference types="cypress-xpath" />
-
-const data = 'silinecek list'
+const user = require('../../fixtures/user.json');
+const amazon = require('../../fixtures/amazon.json');
+const allPages = require('../../fixtures/allpages.json');
+const data = "sil"
 Given('user is on {string}', (url) => {
-
     cy.visit(url);
     cy.get('#sp-cc-accept').click();
 })
 
 When('user clicks on signin button', () => {
-    cy.get('#nav-link-accountList').click();
+    cy.get(amazon.sign_in_button).click();
 
 
 })
 
 And('user types valid email', () => {
-
-    cy.get('#ap_email').type('omeryttnc2@gmail.com');
-    cy.get('.a-button-inner > #continue').click();
+    cy.get(amazon.type_username).type(user.username);
+    cy.get(allPages.home.click_username).click();
 
 })
 
 And('user types valid password', () => {
 
-    cy.get('#ap_password').type('asdf.123');
-    cy.get('#signInSubmit').click();
+    cy.get(amazon.type_password).type(user.password);
+    cy.get(amazon.click_password).click();
 
 })
 
 Then('verify user successfully signin the amazon', () => {
 
-    cy.get('#nav-link-accountList-nav-line-1').should('have.text', 'Hello, omer')
+    cy.get(amazon.username_text).should('have.text', 'Hello, omer')
 
 })
 Then('hover on username', () => {
-    cy.get("#nav-link-accountList").trigger('mouseover')
+    cy.get(amazon.hover_over_place_to_get_manage_list).trigger('mouseover')
 
 })
 Then('click on create list', () => {
@@ -45,13 +45,14 @@ Then('click on create list', () => {
 Then('create list', () => {
     //cy.get("#createList").click()
     cy.get("#list-name").clear()
+
     cy.get("#list-name").type(data)
     cy.get("#wl-redesigned-create-list > span > span > input").click()
-    
-    
-    
+
+
+
 })
-And('verify list is exist',  () => {
+And('verify list is exist', () => {
     cy.wait(3000)
     cy.xpath("//span[contains(@id,'wl-list-entry-title')]").then((item, index) => {
         cy.wrap(item)
@@ -62,14 +63,17 @@ And('verify list is exist',  () => {
 Then('click list which will be deleted', () => {
     cy.xpath("//span[@class='nav-text' and text()='Your Lists']").click()
 
-    cy.xpath("(//span[contains(@id,'wl-list')])[2]").click()
+
+    cy.contains(data).click()
+
+
 })
 Then('hover on More', () => {
     cy.get("#overflow-menu-popover-trigger > div:nth-child(2)").trigger('mouseover')
 
 })
 Then('click Manage list', () => {
-    cy.get('#editYourList').click({force: true})
+    cy.get('#editYourList').click({ force: true })
 
 })
 Then('scroll down on the popup menu', () => {
@@ -86,7 +90,7 @@ Then('click on yes to confirm', () => {
 })
 And('verify list is not visible', () => {
     cy.wait(3000)
-     cy.xpath("//span[contains(@id,'wl-list-entry-title')]").then((item, index) => {
+    cy.xpath("//span[contains(@id,'wl-list-entry-title')]").then((item, index) => {
         cy.wrap(item)
             .should('not.contain.text', data)
 
