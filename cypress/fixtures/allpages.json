@@ -1,0 +1,30 @@
+{
+    "home": {
+        "sign_in_button": "#nav-link-accountList",
+        "type_username": "#ap_email",
+        "click_username": ".a-button-inner > #continue",
+        "type_password": "#ap_password",
+        "click_password": "#signInSubmit"
+    },
+    "list": {
+        "username_text": "#nav-link-accountList-nav-line-1",
+        "hover_over_place_to_get_manage_list": "#nav-link-accountList",
+        "three_dot":"#overflow-menu-popover-trigger-I16GRQECM05UTC > img",
+        "remove":"#wl-grid-item-menu-options-I16GRQECM05UTC > ul > span:nth-child(3) > li > span",
+        "deleted":"#item_I16GRQECM05UTC > span > div.a-section.a-spacing-none.g-item-sortable-draggable-area.wl-grid-item-content.wl-grid-item-flex-container > div > div > div > div > span > div:nth-child(1)",
+        "there_are_no":"#no-items-section > span > div.a-section.a-spacing-top-mini.a-text-left.zero-items-text-section > span",
+        "your_list":"#nav-al-your-account > a:nth-child(4) > span"
+
+    },
+    "product": {
+        "todaysDeal": "#nav-xshop > a:nth-child(2)",
+        "x_list_dealProducts_main": "//div[@data-testid]/a[@class='a-link-normal']",
+        "x_list_dealProducts_side": "//div[contains(@class,'a-section') and contains(@class,'asin-section')]",
+        "add_to_list": "#add-to-wishlist-button-group",
+        "add_to_list_assertion": {
+            "bir": "#WLHUC_result_itemCount",
+            "item": "#WLHUC_result_itemSing",
+            "added_to": "#WLHUC_result_action_add"
+        }
+    }
+}
