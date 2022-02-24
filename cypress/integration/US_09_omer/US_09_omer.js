@@ -1,5 +1,7 @@
+import { expect } from "chai";
 import { Given, And, Then, When } from "cypress-cucumber-preprocessor/steps";
 import { Hook } from "mocha";
+import { randomSelect_xpath } from "../../support/util";
 /// <reference types="cypress-xpath" />
 const user = require('../../fixtures/user.json');
 const amazon = require('../../fixtures/amazon.json');
@@ -42,12 +44,13 @@ Then('click on Today`s deal', () => {
     cy.get(allPages.product.todaysDeal).click()
 })
 Then('click on any top deal', () => {
-    cy.xpath(allPages.product.x_list_dealProducts_main).first().click()
-
+   // cy.xpath(allPages.product.x_list_dealProducts_main).first().click()
+randomSelect_xpath(allPages.product.x_list_dealProducts_main)
 })
 Then('click on any product', () => {
-    cy.xpath(allPages.product.x_list_dealProducts_side).first().click()
+    // cy.xpath(allPages.product.x_list_dealProducts_side).first().click()
     // random nasil tiklanir sor
+    randomSelect_xpath(allPages.product.x_list_dealProducts_side)
 
 })
 Then('scroll down to add list', () => {
@@ -71,11 +74,11 @@ Then('click list which will be default', () => {
 
 })
 Then('click on the three dots over picture which will be removed', () => {
-    cy.get(allPages.list.three_dot).click()
+    cy.xpath(allPages.list.x_three_dot).click()
 })
 Then('click on remove', () => {
-
-    cy.get(allPages.list.remove).click()
+cy.wait(2000)
+    cy.xpath(allPages.list.x_remove).click()
 })
 Then('confirm {string} is visible', (data) => {
     cy.get(allPages.list.deleted).scrollIntoView().should('contain.text', data)
@@ -83,6 +86,7 @@ Then('confirm {string} is visible', (data) => {
 Then('reload page', () => {
     cy.reload()
 })
-Then('confirm {string} is visible', (data) => {
+And('confirm {string} is visible', (data) => {
+    cy.type({pageUp})
     cy.get(allPages.list.hover_over_place_to_get_manage_list).scrollTo('top').should('contain.text', data)
 })
