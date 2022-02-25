@@ -6,7 +6,10 @@
         "type_password": "#ap_password",
         "click_password": "#signInSubmit",
         "bottom_links":"tr > .navFooterDescItem > a",
-        "all_for_subcat": ".hm-icon"
+        "all_for_subcat": ".hm-icon",
+        "search_box": "#twotabsearchtextbox",
+        "all_products":".a-size-base-plus.a-color-base.a-text-normal",
+        "basket":"#nav-cart-count"
     },
     "list": {
         "username_text": "#nav-link-accountList-nav-line-1",
@@ -27,6 +30,9 @@
             "bir": "#WLHUC_result_itemCount",
             "item": "#WLHUC_result_itemSing",
             "added_to": "#WLHUC_result_action_add"
-        }
+        },
+        "one_time_puchase":"#newAccordionRow > .a-accordion-row-container > .a-accordion-row-a11y > .a-accordion-row > .a-icon",
+        "Add_to_basket":"add-to-cart-button"
+
     }
 }

@@ -42,6 +42,7 @@ cy.get(allPages.home.all_for_subcat).click()
 })
 And('verify subcategories', () => {
 
+    //todo verify ekle
 
 })
 

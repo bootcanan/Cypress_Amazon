@@ -33,33 +33,35 @@ And('user types valid password', () => {
 
 Then('verify user successfully signin the amazon', () => {
 
-    cy.get(amazon.username_text).should('have.text', 'Hello, omer').type('{end}')
+    cy.get(amazon.username_text).should('have.text', 'Hello, omer')
 
 })
-Then('go to bottom of the page', () => {
+Then('search beans', () => {
+    cy.get(allPages.home.search_box).type("beans{enter}")
 
 })
-Then('click on random page', () => {
-//randomSelect_css(allPages.home.bottom_links)
-cy.get(allPages.home.bottom_links).then(($li) => {
-    const items = $li.toArray()
-    return Cypress._.sample(items)
-}).then(($li)=>{
-    expect(Cypress.dom.isJquery($li), 'jQuery element').to.be.true
-    let title = $li.text()
-    cy.log(`you picked "${$li.text()}"`)
-}).click()
-
-//title.invoke('text').then((text) => {
-  //  var splitText = text.split(' ')[1]
-    //expect(splitText).to.contain(cy.Cypress.)
-//})
-//title.spl
-})
-And('verify you are on correct page', () => {
-
+Then('click on Free UK Delivery by amazon', () => {
 
 })
+And('verify is clicked', () => {
+
+})
+And('all products contains Free Delivery in their description', () => {
+
+})
+Then('click on sort by', () => {
+
+})
+Then('select price low to high', () => {
+
+})
+And('verify product price are low from high', () => {
+
+})
+
+
+
+
 
 
 

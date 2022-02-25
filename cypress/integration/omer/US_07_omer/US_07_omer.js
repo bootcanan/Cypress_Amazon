@@ -50,14 +50,12 @@ cy.get(allPages.home.bottom_links).then(($li) => {
     cy.log(`you picked "${$li.text()}"`)
 }).click()
 
-//title.invoke('text').then((text) => {
-  //  var splitText = text.split(' ')[1]
-    //expect(splitText).to.contain(cy.Cypress.)
-//})
-//title.spl
+
 })
 And('verify you are on correct page', () => {
 
+
+// todo verification ekle
 
 })
 
