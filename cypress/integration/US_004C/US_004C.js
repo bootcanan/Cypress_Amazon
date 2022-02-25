@@ -3,23 +3,12 @@ import { Given } from "cypress-cucumber-preprocessor/steps";
 
 /// <reference types="cypress-xpath" />
 
-<<<<<<< HEAD:cypress/integration/US_004C/US_004C.js
 Given('user is on his account',()=>{
   cy.goToPage('https://www.amazon.co.uk/');
 
 cy.login('crazyfordata.123@gmail.com','2985.cakobes');
-}) 
-=======
-Given('user is on his account', () => {
-  cy.visit('https://www.amazon.co.uk/');
-  cy.get('#sp-cc-accept').click();
-  cy.get('#nav-link-accountList').click();
-  cy.get('#ap_email').type('crazyfordata.123@gmail.com');
-  cy.get('.a-button-inner > #continue').click();
-  cy.get('#ap_password').type('2985.cakobes');
-  cy.get('#signInSubmit').click();
+
 })
->>>>>>> 0ba75499d36bd42866ff88dba001bad31b3d69b7:cypress/integration/US_004/US_004.js
 
 And('User clicks on All tag', () => {
   cy.wait(2000);
