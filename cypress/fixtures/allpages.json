@@ -1,0 +1,31 @@
+{
+    "home": {
+        "sign_in_button": "#nav-link-accountList",
+        "type_username": "#ap_email",
+        "click_username": ".a-button-inner > #continue",
+        "type_password": "#ap_password",
+        "click_password": "#signInSubmit",
+        "bottom_links":"tr > .navFooterDescItem > a"
+    },
+    "list": {
+        "username_text": "#nav-link-accountList-nav-line-1",
+        "hover_over_place_to_get_manage_list": "#nav-link-accountList",
+        "x_three_dot":"(//img[@alt='More options'])[2]",
+        "x_remove":"(//li[@class]/span[@class and contains(text(),'Remove')])[1]",
+        "deleted":"span >.a-row.a-spacing-none:nth-child(1)",
+        "there_are_no":"#no-items-section > span > div.a-section.a-spacing-top-mini.a-text-left.zero-items-text-section > span",
+        "your_list":"#nav-al-your-account > a:nth-child(4) > span"
+
+    },
+    "product": {
+        "todaysDeal": "#nav-xshop > a:nth-child(2)",
+        "x_list_dealProducts_main": "//div[@data-testid]/a[@class='a-link-normal']",
+        "x_list_dealProducts_side": "//div[contains(@class,'a-section') and contains(@class,'asin-section')]",
+        "add_to_list": "#add-to-wishlist-button-group",
+        "add_to_list_assertion": {
+            "bir": "#WLHUC_result_itemCount",
+            "item": "#WLHUC_result_itemSing",
+            "added_to": "#WLHUC_result_action_add"
+        }
+    }
+}
