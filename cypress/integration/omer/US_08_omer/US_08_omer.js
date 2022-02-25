@@ -1,9 +1,9 @@
 import { Given, And, Then, When } from "cypress-cucumber-preprocessor/steps";
 import { Hook } from "mocha";
 /// <reference types="cypress-xpath" />
-const user = require('../../fixtures/user.json');
-const amazon = require('../../fixtures/amazon.json');
-const allPages = require('../../fixtures/allpages.json');
+const user = require('../../../fixtures/user.json');
+const amazon = require('../../../fixtures/amazon.json');
+const allPages = require('../../../fixtures/allpages.json');
 const data = "sil"
 Given('user is on {string}', (url) => {
     cy.visit(url);
