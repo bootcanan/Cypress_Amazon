@@ -33,32 +33,18 @@ And('user types valid password', () => {
 
 Then('verify user successfully signin the amazon', () => {
 
-    cy.get(amazon.username_text).should('have.text', 'Hello, omer').type('{end}')
+    cy.get(amazon.username_text).should('have.text', 'Hello, omer')
 
 })
-Then('go to bottom of the page', () => {
+Then('search beans', () => {
+cy.get(allPages.home.search_box).type("beans{enter}")
 
 })
-Then('click on random page', () => {
-//randomSelect_css(allPages.home.bottom_links)
-cy.get(allPages.home.bottom_links).then(($li) => {
-    const items = $li.toArray()
-    return Cypress._.sample(items)
-}).then(($li)=>{
-    expect(Cypress.dom.isJquery($li), 'jQuery element').to.be.true
-    let title = $li.text()
-    cy.log(`you picked "${$li.text()}"`)
-}).click()
+Then('verify all items contains beans', () => {
 
-//title.invoke('text').then((text) => {
-  //  var splitText = text.split(' ')[1]
-    //expect(splitText).to.contain(cy.Cypress.)
-//})
-//title.spl
+cy.get(allPages.home.all_products).then((item,index)=>{
+    cy.wrap(item).should('contain.text','beans')
 })
-And('verify you are on correct page', () => {
-
-
 })
 
 

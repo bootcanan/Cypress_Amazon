@@ -1,6 +1,6 @@
 Feature: US_007 user able to click and locate correct page
 
- Scenario:TC_008_01 user able to create shopping list
+ Scenario:TC_007_01 user able to create shopping list
         Given user is on 'https://www.amazon.co.uk/'
         When user clicks on signin button
         And user types valid email
