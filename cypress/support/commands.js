@@ -35,7 +35,7 @@ cy.get('#signInSubmit').click();
  Cypress.Commands.add('search',item=>{
     
     cy.get('#twotabsearchtextbox').type(item);
-
+    cy.get('#nav-search-submit-button').click()
 
  });
  Cypress.Commands.add('addItems', (element) => {
