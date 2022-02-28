@@ -44,12 +44,10 @@ Then('click on Today`s deal', () => {
     cy.get(allPages.product.todaysDeal).click()
 })
 Then('click on any top deal', () => {
-   // cy.xpath(allPages.product.x_list_dealProducts_main).first().click()
-randomSelect_xpath(allPages.product.x_list_dealProducts_main)
+    randomSelect_xpath(allPages.product.x_list_dealProducts_main)
 })
 Then('click on any product', () => {
-    // cy.xpath(allPages.product.x_list_dealProducts_side).first().click()
-    // random nasil tiklanir sor
+
     randomSelect_xpath(allPages.product.x_list_dealProducts_side)
 
 })
@@ -77,7 +75,7 @@ Then('click on the three dots over picture which will be removed', () => {
     cy.xpath(allPages.list.x_three_dot).click()
 })
 Then('click on remove', () => {
-cy.wait(2000)
+    cy.wait(2000)
     cy.xpath(allPages.list.x_remove).click()
 })
 Then('confirm {string} is visible', (data) => {
@@ -87,6 +85,6 @@ Then('reload page', () => {
     cy.reload()
 })
 And('confirm {string} is visible', (data) => {
-    cy.type({pageUp})
+    cy.type({ pageUp })
     cy.get(allPages.list.hover_over_place_to_get_manage_list).scrollTo('top').should('contain.text', data)
 })

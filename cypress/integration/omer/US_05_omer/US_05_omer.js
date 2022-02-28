@@ -9,7 +9,7 @@ const allPages = require('../../../fixtures/allpages.json');
 
 Given('user is on {string}', (url) => {
     cy.visit(url);
-    cy.get('#sp-cc-accept').click();
+    //cy.get('#sp-cc-accept').click();
 })
 
 When('user clicks on signin button', () => {
@@ -41,22 +41,37 @@ Then('search beans', () => {
 
 })
 Then('click on Free UK Delivery by amazon', () => {
-
+    cy.xpath(allPages.product.Free_UK_Delivery).click()
 })
 And('verify is clicked', () => {
 
 })
 And('all products contains Free Delivery in their description', () => {
+    cy.get(allPages.product.description).then((item, index) => {
+        cy.wrap(item).should('contain.text', 'FREE Delivery')
 
+
+    })
 })
 Then('click on sort by', () => {
+    cy.xpath(allPages.product.shortby).click()
 
 })
 Then('select price low to high', () => {
+    cy.get(allPages.product.low_to_high).click()
 
 })
 And('verify product price are low from high', () => {
-
+    let prices = []
+    cy.xpath('//div[@class="s-main-slot s-result-list s-search-results sg-row"]//span[@class="a-price"]').each((item, index) => {
+        let text = item.text().replace(/\D/g, "").slice(0, ((item.text().replace(/\D/g, "").length) / 2));
+        Cypress.config("waitAfterEachCommand", 2000)
+        cy.wait(1000);
+        prices.push(parseInt(text));
+        let firstArray = prices;
+        prices.sort();
+        expect(firstArray, 'cells are sorted 📈').to.deep.equal(prices)
+    })
 })
 
 
