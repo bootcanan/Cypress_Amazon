@@ -32,7 +32,11 @@
             "added_to": "#WLHUC_result_action_add"
         },
         "one_time_puchase":"#newAccordionRow > .a-accordion-row-container > .a-accordion-row-a11y > .a-accordion-row > .a-icon",
-        "Add_to_basket":"add-to-cart-button"
+        "Add_to_basket":"add-to-cart-button",
+        "Free_UK_Delivery":"//span[text()='Free UK Delivery by Amazon']",
+        "description":".a-row.a-size-base.a-color-secondary.s-align-children-center",
+        "shortby":"//span[text()='Sort by:']",
+        "low_to_high":"#s-result-sort-select_1"
 
     }
 }
