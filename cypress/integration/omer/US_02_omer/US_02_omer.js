@@ -14,6 +14,7 @@ Given('user is on {string}', (url) => {
 
 When('user clicks on signin button', () => {
     cy.get(amazon.sign_in_button).click();
+    
 
 
 })

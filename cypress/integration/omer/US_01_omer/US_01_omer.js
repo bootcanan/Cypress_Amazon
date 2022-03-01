@@ -15,6 +15,7 @@ Given('user is on {string}', (url) => {
 And('verify you are on correct page', () => {
 
 cy.url().should('equal','https://www.amazon.co.uk/')
+
 })
 
 
