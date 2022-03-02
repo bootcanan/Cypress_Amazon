@@ -14,7 +14,6 @@ Given('user is on his account',()=>{
     page.url()
     cy.login(this.data.validEmail, this.data.validPassword);
     
-
 })
 
 And('user clicks on All tag', () => {
