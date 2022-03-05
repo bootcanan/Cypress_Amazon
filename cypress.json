@@ -11,5 +11,6 @@
             "html": false,
             "json": true
         }
-    }
+    },
+    "baseUrl" : "https://api.trello.com"
 }
